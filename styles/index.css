@@ -1,0 +1,67 @@
+@import url(/styles/reset.css);
+body{
+    background: hsla(0, 100%, 50%, 0.507);
+}
+h2{
+    text-align: center;
+}
+.header-container{
+    background: rgba(0, 0, 255, 0.5);
+    display: flex;
+    flex-direction: row;
+}
+.nav-container{
+    height: 100%;
+    width: 100%;
+}
+.ul-container{
+    background: rgba(153, 205, 50, 0.514);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}   
+.main-container{
+    background: rgba(0, 128, 0, 0.507);
+    margin: 0 auto;
+    overflow: auto;
+    width: 1024px;
+}
+/* 
+    ! ToDo List style
+*/
+
+.todo-area{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    max-width: 80%;  
+    padding: 2%;
+}
+.field__add-task{
+    background: red;
+    width: 80%;
+}
+.button__add-task{
+    background: blue;
+    margin-left: 2%;
+    width: 20%;
+}
+.input-block{
+    display: flex;
+    flex-direction: row;
+    
+}
+.list-of-tasks{
+    display: flex;
+    flex-direction: column;
+}
+.image-delete-bucket{
+    height: 20px;
+    width: 20px;
+}
+.string-of-task{
+    display: flex;
+    flex-direction: row;
+}
