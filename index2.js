@@ -7,6 +7,8 @@ class Task{
 
     static idCount = 0;
 
+    _handleChangedTask;
+
     constructor(inputValue){
         this.inputValue = inputValue;
 
@@ -18,6 +20,8 @@ class Task{
         this.editButton = document.createElement("button"); 
         this.editButton.textContent = "edit";
 
+        this._handleChangedTask = this.#handleChangedTask.bind(this);
+
     }
     
     #handleChangedTask(){
@@ -28,9 +32,10 @@ class Task{
         const el = document.getElementById(`divID-${this.idOfcurrentElement}`);
         el.firstElementChild.textContent = inputedText;
 
-        addTaskButton.removeEventListener("click", () => this.#handleChangedTask());
+        addTaskButton.removeEventListener("click", this._handleChangedTask); //!
 
-        addTaskButton.addEventListener("click", () => addNewTask);
+        // addTaskButton.addEventListener("click", () => addNewTask);
+        addTaskButton.addEventListener("click", addNewTask);
 
         addTaskButton.style.background = "green";
         addTaskButton.value = "Add task";
@@ -47,7 +52,7 @@ class Task{
         addTaskButton.style.background = "yellow";
         addTaskButton.value = "change";
 
-        addTaskButton.addEventListener("click", () => this.#handleChangedTask());
+        addTaskButton.addEventListener("click", this._handleChangedTask); //!
     }
     attachEventListeners(){
         this.deleteButton.addEventListener("click", () => this.#handleDeleteTask());
