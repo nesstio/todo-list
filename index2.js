@@ -89,5 +89,48 @@ console.log(newTaskItem);
         alert("Input is empty. Please enter a task.");
     }
 }
+function addNewTodoListHandler(){
+    const listName = document.getElementById("name-of-new-todo-list").value.trim();
+
+    if (!listName) {
+        alert("Name of ToDo list empty. Enter name!");
+    } else if (listName in lists){
+        alert("This name exists. Enter another one!");        
+    } else {
+        lists[listName] = [];
+        document.getElementById("place").textContent = listName;
+
+        const dropdown = document.getElementById("listSelect");
+        const option = document.createElement("option");
+        option.text = listName; 
+        dropdown.append(option);
+        option.setAttribute("selected", "")
+
+        document.getElementById("name-of-new-todo-list").value = "";
+    }
+
+    // if (listName && !(listName in lists)) {
+    //     lists[listName] = [];
+    //     document.getElementById("place").textContent = listName;
+    // }else if(!listName){
+    //     alert("Name of ToDo list empty. Enter name!");
+    // }else if(listName in lists){
+    //     alert("This name exists. Enter another one!");
+    // }
+
+    
+    
+console.log(lists);
+    //!        ADD OPTION    //
+    
+
+    
+
+}
+// ! *********************************************!//
+const lists = {};
+const addNewTodoListButton = document.getElementById("add-new-todo-list");
+addNewTodoListButton.addEventListener("click", addNewTodoListHandler); 
+
 const addTaskButton = document.getElementById('button-add-task');
 addTaskButton.addEventListener("click", addNewTask);

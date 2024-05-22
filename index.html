@@ -22,18 +22,26 @@
         </header>
         <main class="main-container">
             <section id="about-me">About me</section>
+            <div class="todo-name_wrap">
+                <input type="text" placeholder="New ToDo List" id="name-of-new-todo-list">
+                <button id="add-new-todo-list">+</button>
+            </div>
             <section class="todo-area" id="todo-list">
-                <h2>ToDo List</h2>
-                <div class="input-block">
-                    <input class="field__add-task" type="text" placeholder="Enter a task..." id="input-text">
-                    <input class="button__add-task" type="button" value="Add task" id="button-add-task">
+                <div class="select-list-part">
+                    <select id="listSelect"  onchange="switchList()"> <!--!onchange="switchList()-->>
+                        <option value="default" >chose your list</option>
+                      </select>
                 </div>
-                <div class="list-of-tasks" id="list-of-tasks">
+                <div class="task-part">
+                    <h2 id="place">ToDo List</h2>
+                    <div class="input-block">
+                        <input class="field__add-task" type="text" placeholder="Enter a task..." id="input-text">
+                        <input class="button__add-task" type="button" value="Add task" id="button-add-task">
+                    </div>
+                    <div class="list-of-tasks" id="list-of-tasks">
+                    </div>
+                </div>
 
-                </div>
-                <div class="test">
-                    
-                </div>
             </section>
             <section id="gallery">gallery
                 
