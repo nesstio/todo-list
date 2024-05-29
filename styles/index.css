@@ -1,6 +1,6 @@
 @import url(/styles/reset.css);
 body{
-    background: hsla(0, 100%, 50%, 0.507);
+    background: hsla(0, 0%, 60%, 0.637);
 }
 h2{
     text-align: center;
@@ -22,9 +22,19 @@ h2{
 }   
 .main-container{
     background: rgba(0, 128, 0, 0.507);
-    margin: 0 auto;
+    margin: 0; 
     overflow: auto;
-    width: 1024px;
+    min-width: 40%;
+    max-height: 90%; 
+    border-radius: 15px;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    margin: 0; 
+    overflow: hidden; 
 }
 /* 
     ! ToDo List style
@@ -33,35 +43,88 @@ h2{
 .todo-area{
     background: white;
     display: flex;
-    flex-direction: column;
+    
+    flex-wrap: wrap;
+    row-gap: 5%;
+
     justify-content: center;
     margin: auto;
     max-width: 80%;  
-    padding: 2%;
+    padding: 5%;
+    margin-bottom: 5%;
+
+    border-radius: 15px;
 }
 .field__add-task{
-    background: red;
+    background: rgb(175, 174, 174);
     width: 80%;
+    border-radius: 5px;
+}
+.field__add-task:focus{
+    background: rgb(206, 206, 206);   
+    outline: groove green;
 }
 .button__add-task{
-    background: blue;
+    background: rgb(21, 182, 75);
+    border-radius: 5px;
     margin-left: 2%;
     width: 20%;
+    height: 100%;
 }
 .input-block{
+    
     display: flex;
     flex-direction: row;
-    
+    height: 40px;
+    padding: 5% 0;
 }
 .list-of-tasks{
     display: flex;
     flex-direction: column;
 }
-.image-delete-bucket{
+label{
+    padding: 5px;
+}
+.checkbox-label {
+    color: black;
+    font-weight: bold;
+}
+input[type="checkbox"]:checked + .checkbox-label{
+    color: rgb(167, 160, 160);
+    text-decoration: line-through;
+    font-weight: bold;
+}
+.task-line{
+    display: grid;
+    grid-template-columns: 10% 60% 15% 15%;
+    margin: 4px;
+    border-bottom: 2px groove;
+}
+.image-delete-bucket,.image-update-pen{
     height: 20px;
     width: 20px;
 }
 .string-of-task{
+    border: 2px black;
+    border-style: ridge;
+    padding: 1%;
+
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin: 1% 0;
+}
+.select-list-part{
+    padding: 5% 10% 5% 5%;
+} 
+.task-part{
+    padding: 5%;
+    min-width: 60%;
+}
+.todo-name_wrap{
+    /* padding: 2% 8%; */
+    padding: 2% 5%;
+}
+.hide{
+    display: none;
 }
