@@ -39,7 +39,7 @@ export class Task{
 
         const el = document.getElementById(`divID-${this.idOfcurrentElement}`);
         if (el) {
-            el.firstElementChild.textContent = inputedText;
+            el.children[1].textContent = inputedText;
         }
 
         addTaskButton.removeEventListener("click", this._handleChangedTask); 

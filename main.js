@@ -16,11 +16,19 @@ export function addNewTaskToDom() {
         divEl.classList.add("task-line");
 
         list.append(divEl);
-        const spanText = document.createElement("span");
-        divEl.append(spanText);
-        spanText.append(newTaskItem.inputValue);
+        const checkbox = document.createElement("input");
         
-        // divEl.append(newTaskItem.idOfcurrentElement);
+        checkbox.type = "checkbox";
+        checkbox.id = "myCheckbox";
+        divEl.append(checkbox); 
+
+        const labelText = document.createElement("label");
+        labelText.setAttribute("for", "myCheckbox");
+    
+        labelText.classList.add("checkbox-label");
+        divEl.append(labelText);
+        labelText.textContent = newTaskItem.inputValue;
+
         divEl.append(newTaskItem.deleteButton); 
         divEl.append(newTaskItem.editButton); 
         newTaskItem.attachEventListeners();
@@ -101,11 +109,19 @@ function renderTaskList(currentNameOfList, list) {
             divEl.classList.add("task-line");
     
             list.append(divEl);
-            const spanText = document.createElement("span");
-            divEl.append(spanText);
-            spanText.append(newTaskItem.inputValue);
-            
-            // divEl.append(newTaskItem.idOfcurrentElement);
+            const checkbox = document.createElement("input");
+        
+            checkbox.type = "checkbox";
+            checkbox.id = "myCheckbox";
+            divEl.append(checkbox); 
+
+            const labelText = document.createElement("label");
+            labelText.setAttribute("for", "myCheckbox");
+        
+            labelText.classList.add("checkbox-label");
+            divEl.append(labelText);
+            labelText.textContent = newTaskItem.inputValue;
+                
             divEl.append(newTaskItem.deleteButton); 
             divEl.append(newTaskItem.editButton); 
             newTaskItem.attachEventListeners();
